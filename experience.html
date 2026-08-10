@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Md Sayed Afridi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --light-blue: #e6f0ff;
+            --dark-blue: #003d99;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-blue) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: #333333 !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 2rem 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background-color: var(--light-blue);
+            top: 0;
+        }
+        
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+            width: calc(50% - 25px);
+            text-align: left;
+            padding-right: 40px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            width: calc(50% - 25px);
+            text-align: left;
+            padding-left: 40px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: var(--primary-blue);
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--light-blue);
+        }
+        
+        .timeline-content {
+            background-color: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        .timeline-content h4 {
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content .company {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content .duration {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content p {
+            color: #666666;
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            margin-top: 0;
+        }
+        
+        .footer p {
+            color: #666666;
+            margin: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+                text-align: left;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html">
+                <img src="afridijpg.jpeg" alt="Profile picture" height="30" width="30" class="rounded-circle align-middle me-2" style="object-fit: cover;">
+             Sayed Afridi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container-lg">
+            <h1>Work Experience</h1>
+            <p>My professional journey</p>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <section class="section">
+        <div class="container-lg">
+            <h2 class="section-title">Career Timeline</h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" style="text-align: justify;">
+                        <h4>Business Operation</h4>
+                        <div class="company">Khandokar Pharmacy</div>
+                        <div class="duration"><i class="bi bi-calendar-event"></i> April 2025 - Present</div>
+                        <ul class="mt-3">
+                            <li>Collaborated with pharmaceutical representatives and territory managers to negotiate contracts.</li>
+                            <li>Sourced and procured quality products from vendors and marketplaces to meet business needs.</li>
+                            <li>Managed daily outlet operations while implementing promotional strategies to increase customer engagement and sales.</li>
+                            <li>Analysed market trends to identify growth opportunities and designed targeted strategies to improve revenue and profitability.</li>
+                            <li>Managed customer relationships by resolving issues, understanding client needs, and ensuring transparent transactions through digital billing systems.</li>
+                        </ul>
+                    
+                        <div class="mt-4">
+                            <strong>Technologies:</strong> Microsoft Office Suite, ERP
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" style="text-align: justify;">
+                        <h4>Sales and Marketing Executive</h4>
+                        <div class="company">Progeny Technology Limited</div>
+                        <div class="duration"><i class="bi bi-calendar-event"></i> January 2025 - March 2025</div>
+                        <ul class="mt-3">
+                            <li>Identified new business opportunities and acquired clients for ERP software sales.</li>
+                            <li>Assisted in developing and executing sales strategies with the marketing team to create effective
+                                sales campaigns.</li>
+                            <li>Delivered tailored product demonstrations, addressing client-specific needs to influence decision-
+                                makers.</li>
+                            <li>Conveyed insights to the product development team based on client needs and market trends.</li>
+                        </ul>
+                    
+                        <div class="mt-4">
+                            <strong>Technologies:</strong> Microsoft Office Suite, ERP, Canva, Odoo CRM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Project Consultant</h4>
+                        <div class="company">Khondaker Pharmacy and Departmental Store</div>
+                        <div>ERP Software Implementation</div>
+                        <div class="duration"><i class="bi bi-calendar-event"></i> July 2024 - June 2025</div>
+                        <ul class="mt-3">
+                            <li>Modernized sales operations by implementing a software-based solution across three business
+                                locations to enhance efficiency, accuracy, and customer service, including integration of POS
+                                slips for customer payment transactions.</li>
+                            <li>ncorporated B2B sales features into the software to simplify wholesale transactions and
+                                improve business processes.</li>
+                            <li>Supported in efficient inventory management and optimize product delivery.</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" style="text-align: justify;">
+                        <h4>Intern, Human Resource Automation</h4>
+                        <div class="company">BRAC International</div>
+                        <div class="duration"><i class="bi bi-calendar-event"></i> May 2024 - August 2024</div>
+                        <ul class="mt-3">
+                            <li>Worked on the implementation project of HRMS ERP software for BRAC's affiliated countries.</li>
+                            <li>Coordinated cross-country data collection and reporting on ERP orientation eligibility and
+                                session tracking for new employees across BI operations in Africa and Asia (Myanmar, Liberia,
+                                Tanzania, Rwanda, Uganda, and Kenya).</li>
+                            <li>Monitored monthly attendance, ensuring all countries entered weekly data and providing
+                                weekly findings reports.</li>
+                            <li>Contributed to developing the HRMS user manual, maintained training session records, edited
+                                session videos, and distributed materials to BRAC employees as needed.</li>
+                        </ul>
+                    
+                        <div class="mt-4">
+                            <strong>Technologies:</strong> Microsoft Office Suite, Outlook, Skype, Google Meet, Adobe Premiere Pro, Jira
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Md Sayed Afridi. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

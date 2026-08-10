@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Sayed Afridi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --light-blue: #e6f0ff;
+            --dark-blue: #003d99;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-blue) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: #333333 !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-blue) 100%);
+            padding: 2rem 0;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #666666;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-primary-blue {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-blue:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+            color: #ffffff;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+        
+        .profile-img {
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 102, 204, 0.2);
+            max-width: 100%;
+            height: 350px;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+            border-color: var(--primary-blue);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .card-title {
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .card-text {
+            color: #666666;
+        }
+        
+        .btn-outline-blue {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-blue:hover {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: #ffffff;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-badge {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            margin-top: 0;
+        }
+        
+        .footer p {
+            color: #666666;
+            margin: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            border-radius: 10px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html">
+                <img src="afridijpg.jpeg" alt="Profile picture" height="30" width="30" class="rounded-circle align-middle me-2" style="object-fit: cover;">
+                Sayed Afridi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container-lg">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1>Hi, I'm Sayed Afridi</h1>
+                    <p class="fs-5">Helping businesses scale with strategy, systems, and insight.</p>
+                    <div>
+                        <a href="CV.pdf" class="btn btn-primary-blue btn-lg me-3">View Resume</a> <!--Issue-->
+                    
+                        <a href="projects.html" class="btn btn-primary-blue btn-lg me-3">View My Work</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/md-sayed-afridi" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.facebook.com/afridi.38" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="mailto:md.sayed.afridi2@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
+                        <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="afridijpg.jpeg" alt="Sayed Afridi" class="rounded-circle d-block mx-auto" 
+     style="width: 350px; height: 350px; object-fit: cover; object-position: center;">
+                </div>
+            </div>
+            <div class="card border-0 p-4 mt-5" style="background-color: var(--light-blue); border-radius: 12px;">
+                <h2 class="fw-bold mb-3" style="font-size: 2rem;">About me</h2>
+                <p class="mb-0" style="text-align: justify; font-size: 1rem; line-height: 1.6;">
+                    I am a business graduate with experience in operations, marketing, Enterprise Resource Planning (ERP), and
+                    team management. My interests include supply chain management, business analytics, and operational strategy.
+                    I excel in fast-paced environments that value leadership, innovation, and operational efficiency, and I contribute
+                    through problem-solving, innovation, and process improvement.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Md Sayed Afridi. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

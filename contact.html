@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Md Sayed Afridi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --light-blue: #e6f0ff;
+            --dark-blue: #003d99;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-blue) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: #333333 !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 2rem 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info-card {
+            background-color: var(--light-blue);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-blue);
+        }
+        
+        .contact-info-card h3 {
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .contact-item i {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-item h5 {
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-item p {
+            color: #666666;
+            margin-bottom: 0;
+        }
+        
+        .contact-item a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+        
+        .form-label {
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-control,
+        .form-select {
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 0.75rem;
+            background-color: #ffffff;
+            color: #333333;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .form-control::placeholder {
+            color: #999999;
+        }
+        
+        .btn-primary-blue {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-primary-blue:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+            color: #ffffff;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            margin-top: 0;
+        }
+        
+        .footer p {
+            color: #666666;
+            margin: 0;
+        }
+        
+        .form-success {
+            display: none;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-success.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html">
+                <img src="afridijpg.jpeg" alt="Profile picture" height="30" width="30" class="rounded-circle align-middle me-2" style="object-fit: cover;">
+                 Sayed Afridi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container-lg">
+            <h1>Get in Touch</h1>
+            <!--<p>I'd love to hear about your project and how I can help</p>-->
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container-lg">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <h5>Location</h5>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <div>
+                            <h5>Email</h5>
+                            <a href="mailto:md.sayed.afridi2@gmail.com">md.sayed.afridi2@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <div>
+                            <h5>Phone</h5>
+                            <a href="tel:+8801926638025">+8801926638025</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-linkedin"></i>
+                        <div>
+                            <h5>LinkedIn</h5>
+                            <a href="https://www.linkedin.com/in/md-sayed-afridi" target="_blank">https://www.linkedin.com/in/md-sayed-afridi</a>
+                        </div>
+                    </div>
+
+                    <h5 style="color: #000000; margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Follow Me</h5>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/md-sayed-afridi" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.facebook.com/afridi.38" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="mailto:md.sayed.afridi2@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
+                        <a href="https://wa.me/8801926638025?text=Hi,%20Sayed" title="Whatsapp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="3bfe0af1-ca2f-4b76-ab4d-3738cf4a92f6">
+                    <input type="hidden" name="from_name" value="Message from Afridi's website">
+
+                    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="First Name" class="form-control" required>
+                      </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-control" required>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <input type="text" name="Subject" class="form-control" required>
+                      </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea name="message" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary-blue">Send Message</button>
+                  </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Md Sayed Afridi. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            successMessage.classList.add('show');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

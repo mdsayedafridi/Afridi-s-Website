@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Platform - Md Sayed Afridi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --light-blue: #e6f0ff;
+            --dark-blue: #003d99;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-blue) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: #333333 !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+        
+        .project-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #ffffff;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .project-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .project-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+        }
+        
+        .section {
+            padding: 2rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+        
+        .highlight-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666666;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tech-badge {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+        }
+        
+        .result-card {
+            background-color: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .result-card p {
+            color: #666666;
+            margin-top: 0.5rem;
+        }
+        
+        .btn-primary-blue {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-blue:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+            color: #ffffff;
+        }
+        
+        .breadcrumb {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer p {
+            color: #666666;
+            margin: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html">
+            Sayed Afridi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <div class="project-hero">
+        <div class="container-lg">
+            <h1>AI Chatbot Platform</h1>
+            <p>An intelligent conversational AI system powered by advanced machine learning and natural language processing</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container-lg">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html" style="color: var(--primary-blue);">Home</a></li>
+                <li class="breadcrumb-item"><a href="projects.html" style="color: var(--primary-blue);">Projects</a></li>
+                <li class="breadcrumb-item active">AI Chatbot Platform</li>
+            </ol>
+        </nav>
+
+        <!-- Project Image -->
+        <img src="project3.jpg" alt="AI Chatbot Platform" class="project-image">
+
+        <!-- Overview Section -->
+        <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>An enterprise-grade AI chatbot platform that leverages cutting-edge natural language processing and machine learning to provide intelligent customer support. The platform is designed to handle complex conversations, learn from interactions, and continuously improve response quality.</p>
+            
+            <div class="highlight-box">
+                <strong>Key Achievement:</strong> Processes 10,000+ conversations daily with 87% first-contact resolution rate and 4.6/5 user satisfaction.
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <h2 class="section-title">Features & Functionality</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 style="color: #000000; font-weight: 600; margin-top: 1rem;">Core Features</h5>
+                    <ul class="feature-list">
+                        <li>Natural language understanding (NLU)</li>
+                        <li>Intent recognition and classification</li>
+                        <li>Multi-language support (15+ languages)</li>
+                        <li>Context-aware responses</li>
+                        <li>Sentiment analysis and emotion detection</li>
+                        <li>Seamless human handoff</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 style="color: #000000; font-weight: 600; margin-top: 1rem;">Analytics & Admin</h5>
+                    <ul class="feature-list">
+                        <li>Conversation analytics dashboard</li>
+                        <li>Performance metrics and KPIs</li>
+                        <li>User feedback and ratings</li>
+                        <li>Training data management</li>
+                        <li>Integration marketplace</li>
+                        <li>Custom workflow builder</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-badge">Python</div>
+                <div class="tech-badge">TensorFlow</div>
+                <div class="tech-badge">NLP</div>
+                <div class="tech-badge">React</div>
+                <div class="tech-badge">Node.js</div>
+                <div class="tech-badge">MongoDB</div>
+                <div class="tech-badge">AWS</div>
+                <div class="tech-badge">Docker</div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section">
+            <h2 class="section-title">Project Results</h2>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="result-card">
+                        <div class="number">10K+</div>
+                        <p>Daily Conversations</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="result-card">
+                        <div class="number">87%</div>
+                        <p>First Contact Resolution</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="result-card">
+                        <div class="number">4.6/5</div>
+                        <p>User Satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="result-card">
+                        <div class="number">35%</div>
+                        <p>Cost Reduction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions -->
+        <section class="section">
+            <h2 class="section-title">Challenges & Solutions</h2>
+            
+            <div class="highlight-box">
+                <h5 style="color: #000000; margin-bottom: 1rem;">Challenge: Understanding Context</h5>
+                <p style="margin-bottom: 0;">Implemented attention mechanisms and transformer-based models (BERT, GPT) to maintain conversation context over multiple turns, enabling more coherent and relevant responses.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h5 style="color: #000000; margin-bottom: 1rem;">Challenge: Handling Edge Cases</h5>
+                <p style="margin-bottom: 0;">Built a confidence scoring system with human-in-the-loop training. Low-confidence conversations are escalated to human agents, providing feedback to improve the model.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h5 style="color: #000000; margin-bottom: 1rem;">Challenge: Multi-language Support</h5>
+                <p style="margin-bottom: 0;">Implemented multilingual NLP pipelines with language detection and translation APIs, enabling seamless support across 15+ languages with minimal latency.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section">
+            <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%); color: #ffffff; padding: 3rem; border-radius: 8px; text-align: center;">
+                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 1rem;">Want to Implement AI in Your Business?</h3>
+                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">Let's explore how AI can enhance your customer experience and automate support.</p>
+                <a href="contact.html" class="btn btn-light btn-lg" style="font-weight: 600;">Start Your Project</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Md Sayed Afridi. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links" style="justify-content: flex-end;">
+                        <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
